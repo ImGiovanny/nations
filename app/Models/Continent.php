@@ -15,4 +15,10 @@ class Continent extends Model
     public $timestamps = false;
     // crea datos falsos
     use HasFactory;
+
+    //Relacion entre continente y region 1:M
+
+    public function regiones(){
+        return $this->hasMany(Region::class, 'continent_id');
+    }
 }
